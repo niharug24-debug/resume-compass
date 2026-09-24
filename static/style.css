@@ -1,0 +1,84 @@
+/* A small dashboard made with standard CSS and ordinary form controls. */
+:root { font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.5; color: #263349; background: #edf1f7; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+header { background: #2856a6; border-bottom: 4px solid #f5b544; color: white; padding: 17px max(24px, calc((100% - 1200px) / 2)); display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.brand { font-size: 21px; font-weight: 700; color: white; text-decoration: none; }
+.header-note { font-size: 13px; color: #e1ebff; }
+main { max-width: 1248px; margin: auto; padding: 28px 24px; }
+.intro { margin-bottom: 24px; }
+h1 { font-size: 26px; margin: 0 0 5px; }
+.intro p { margin: 0; color: #59687b; }
+h2 { font-size: 17px; margin: 0 0 18px; }
+h3 { font-size: 14px; margin: 20px 0 10px; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 22px; align-items: start; }
+.card { background: white; border: 1px solid #d7deea; border-radius: 6px; margin-bottom: 22px; overflow: hidden; }
+.input-panels { display: grid; grid-template-columns: 1fr 1fr; }
+.resume-panel, .job-panel { padding: 20px; min-width: 0; }
+.resume-panel { border-top: 4px solid #3479c8; border-right: 1px solid #dce3ed; }
+.job-panel { border-top: 4px solid #edaa3b; }
+.section-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 18px; }
+.section-heading h2 { margin: 0; color: #205b9f; }
+.job-panel h2 { color: #97600f; }
+label { display: block; font-size: 13px; font-weight: 600; margin: 15px 0 6px; }
+textarea, input { width: 100%; font: inherit; padding: 10px; border: 1px solid #bfcbdc; border-radius: 4px; background: white; color: #263349; }
+textarea { resize: vertical; line-height: 1.6; }
+textarea::placeholder, input::placeholder { color: #7a8698; }
+.upload { background: #eef5ff; border: 1px solid #d1e2f9; border-radius: 4px; padding: 12px; margin-top: 0; color: #245a96; }
+.upload small { display: block; font-size: 11px; font-weight: 400; color: #536d8d; margin: 3px 0 10px; }
+.upload input { border: 0; padding: 0; background: transparent; font-size: 12px; }
+input::file-selector-button { border: 1px solid #a9c2e1; background: white; color: #285b96; padding: 6px 8px; border-radius: 3px; margin-right: 6px; cursor: pointer; }
+.form-bottom { padding: 16px 20px; background: #f8fafc; border-top: 1px solid #dce3ed; display: flex; align-items: center; gap: 20px; justify-content: space-between; }
+.privacy, .muted { font-size: 12px; color: #5e6d80; line-height: 1.6; }
+.privacy { margin: 0; max-width: 410px; }
+button { font: inherit; font-size: 13px; cursor: pointer; border: 1px solid #bbc9db; border-radius: 4px; background: white; color: #34506f; padding: 8px 12px; }
+button:hover { background: #edf3fc; }
+button:disabled { opacity: .6; cursor: wait; }
+.primary { background: #2856a6; color: white; border-color: #2856a6; white-space: nowrap; padding: 11px 18px; font-weight: 600; }
+.primary:hover { background: #1e4385; }
+.quiet { color: #2856a6; background: #edf4ff; border-color: #d0e0f7; font-size: 11px; padding: 5px 8px; white-space: nowrap; }
+:focus-visible { outline: 3px solid #5594e3; outline-offset: 2px; }
+.history { padding: 0 16px 16px; border-top: 4px solid #8064b9; }
+.history h2 { color: #684a9c; padding: 15px 0 12px; border-bottom: 1px solid #e3dcef; margin-bottom: 8px; font-size: 16px; }
+.history-item { padding: 12px 0; border-bottom: 1px solid #e2e7ef; overflow-wrap: anywhere; }
+.history-item > button:first-child { display: block; text-align: left; border: 0; padding: 0; color: #2856a6; }
+.history-item small { display: block; color: #69788c; font-size: 11px; margin: 5px 0 8px; }
+.history-item > button:last-child { color: #a33d46; border-color: #e6c7ca; background: #fff7f7; font-size: 11px; padding: 3px 8px; }
+.note { margin-top: 20px; padding: 12px; background: #fff8e5; border-left: 3px solid #e8b943; color: #755c22; font-size: 12px; }
+.note h3 { margin: 0 0 6px; }
+.note p { margin: 0; }
+#results { border-top: 4px solid #31966c; padding: 20px; }
+#result-title { color: #25734f; }
+.score-row { display: flex; gap: 20px; align-items: center; }
+.score-row strong { font-size: 36px; color: #25734f; }
+.score-row p { font-size: 12px; max-width: 300px; }
+progress { width: 100%; height: 10px; accent-color: #31966c; }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+.columns > div { background: #f0faf4; border: 1px solid #cde6d5; padding: 14px; border-radius: 4px; }
+.columns > div:last-child { background: #fff8eb; border-color: #f1dfbc; }
+.columns h3 { margin: 0 0 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { background: #d8efe1; color: #265e3b; font-size: 12px; border-radius: 3px; padding: 4px 8px; }
+.missing span { background: #fbe5bc; color: #7c5416; }
+.suggestion { background: #f7f9fd; border-left: 3px solid #7a98c7; margin: 16px 0; padding: 10px 14px; overflow-wrap: anywhere; }
+.suggestion p { margin: 5px 0; }
+.suggestion label { display: flex; align-items: center; gap: 8px; }
+.suggestion input { width: auto; accent-color: #2856a6; }
+.actions { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+#export { background: #287653; border-color: #287653; color: white; }
+#export:hover { background: #205e42; }
+#status:not(:empty) { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); max-width: 90%; background: #263d61; color: white; padding: 12px 18px; border-radius: 4px; z-index: 5; }
+footer { color: #67768b; border-top: 1px solid #d3dbe7; padding-top: 16px; font-size: 11px; }
+@media (max-width: 1000px) { .layout { grid-template-columns: minmax(0, 1fr); } .history { max-width: none; } }
+@media (max-width: 600px) {
+  header { padding: 15px 16px; }
+  .brand { font-size: 18px; }
+  .header-note { font-size: 11px; max-width: 100px; text-align: right; }
+  main { padding: 22px 14px; }
+  h1 { font-size: 24px; }
+  .input-panels, .columns { grid-template-columns: 1fr; }
+  .resume-panel { border-right: 0; }
+  .resume-panel, .job-panel { padding: 18px; }
+  .form-bottom { flex-direction: column; align-items: stretch; gap: 12px; }
+  #results { padding: 18px; }
+}

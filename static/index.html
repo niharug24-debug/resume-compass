@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resume Compass</title><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script></head>
+<body>
+<header><a href="/" class="brand">Resume Compass</a><span class="header-note">Resume &amp; job comparison</span></header>
+<main>
+<section class="intro"><h1>Resume Analyzer</h1><p>Upload your resume, add the job details, and check the skills you have in common.</p></section>
+<div class="layout"><div>
+<form id="analysis-form" class="card">
+<div class="input-panels"><section class="resume-panel"><div class="section-heading"><h2>1. Your resume</h2><button id="sample" type="button" class="quiet">Try a sample</button></div>
+<label class="upload" for="pdf">Upload a PDF <small>Text-based PDF · up to 5 MB · 10 pages</small><input id="pdf" type="file" accept=".pdf,application/pdf"></label>
+<label for="resume">Review extracted text, or paste your resume</label><textarea id="resume" required minlength="20" maxlength="30000" rows="10" placeholder="Your skills, projects and experience…"></textarea>
+</section><section class="job-panel"><h2>2. Job details</h2>
+<label for="title">Role title <span class="muted">(optional)</span></label><input id="title" maxlength="100" placeholder="Junior Python Developer">
+<label for="job">Job description</label><textarea id="job" required minlength="20" maxlength="15000" rows="10" placeholder="Paste the role requirements here…"></textarea>
+</section></div><div class="form-bottom"><p class="privacy">Runs on your computer. Saved reports contain your text. Delete them from history when finished.</p>
+<button id="analyze" class="primary" type="submit">Compare my resume</button></div>
+</form>
+<section id="results" class="card" hidden aria-labelledby="result-title"><h2 id="result-title">Skill coverage</h2><div class="score-row"><strong id="score"></strong><p id="formula"></p></div><progress id="coverage" max="100" value="0" aria-label="Recognized skill coverage"></progress><p class="muted">A dictionary-based keyword comparison, not an employer ATS score. Missing means not mentioned, not that you lack a skill.</p><div class="columns"><div><h3>Found in your resume</h3><div id="matched" class="chips"></div></div><div><h3>Not mentioned</h3><div id="missing" class="chips missing"></div></div></div><p>Only add a missing skill if you can demonstrate it. Otherwise, use it as a learning goal.</p><h3>Suggested edits</h3><p class="muted">Simple wording suggestions. Only accept a change if it fits what you did.</p><div id="suggestions"></div><label for="revised">Resume text with accepted changes</label><textarea id="revised" rows="6" readonly></textarea><div class="actions"><button id="copy" type="button">Copy resume text</button><button id="export" type="button">Download summary</button></div></section>
+</div><aside class="card history"><h2>Saved comparisons</h2><p class="muted">Your last 100 comparisons.</p><div id="history"></div><div class="note"><h3>About the score</h3><p>The score shows how many listed job skills appear in your resume. It is not an ATS rating.</p></div></aside></div>
+<p id="status" role="status" aria-live="polite"></p>
+<footer>Local project · Rule-based matching · No data sent to AI services</footer>
+</main></body></html>
+
+
